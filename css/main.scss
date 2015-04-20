@@ -1,0 +1,313 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+//Fonts
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat|Playfair+Display+SC);
+@import url(http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css);
+
+$baseFont: 'Montserrat', sans-serif;
+$headerFont: 'Raleway', sans-serif;
+$headerFontFancy: 'Playfair Display SC', serif;
+
+//Colours
+$black: #222;
+$white: #fef;
+$gray: #aaa;
+$teal: #64C7CC;
+
+//General Typography
+body {
+	font-family: $baseFont;
+	background: $white;
+	text-align: center;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+a {
+	color: $black;
+	text-decoration: none;
+	transition: all 0.25s ease-in-out;
+	text-transform: uppercase;
+	border-bottom: 1px dotted $teal;
+	&:hover {
+		color: $teal;
+	}
+	
+}
+
+
+
+//Images 
+img {
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid $gray;
+}
+
+//Headings
+h1 {	
+	letter-spacing: 4px;
+	font-size: 3.5em;
+	margin: 0 20px;
+}
+
+h1, h3 {
+	font-family: $headerFontFancy;
+}
+h2, h4 {
+	font-family: $headerFont;
+}
+
+h2, h3, h5 {
+	text-transform: uppercase;
+}
+
+h3 {
+	background: $white;
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.5em;
+	letter-spacing: 2px;
+	font-weight: 700;
+	margin-top: 0;
+}
+
+//Ordered and Unordered Lists
+ul, ol {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+//Wrappers and Sections
+.wrapper {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+.innerWrapper {
+	margin: 50px 0 100px 0;
+}
+
+.section {
+	border-top: 1px solid $gray;
+	margin: 75px auto;
+	clear: both;
+	h3.sectionTitle {
+		position: relative;
+		bottom: 25px;
+		padding: 0 10px;
+		margin: 0 auto;	
+		width: 30%;
+		@media (max-width: 755px) {
+			width: 50%;	
+		}
+		@media (max-width: 455px) {
+			width: 75%;
+		}
+	}	
+}
+
+.columns {
+	column-count: 2;
+	column-gap: 60px;
+	column-rule: 1px dotted $gray;
+	text-align: left;
+	p:first-child {
+		margin-top: 0px;
+	}
+	h4 {
+		margin-top: 20px;
+		font-family: $headerFontFancy;
+	}
+	@media (max-width: 940px) {
+		column-count: 1;
+		text-align: center;
+	}
+}
+
+//Navigation
+.navBar {
+	ul.nav {
+		width: 100%;
+		padding: 15px 0;
+		@media (max-width: 455px) {
+			display: none;
+		}
+		a {
+			border: none;
+		}
+		li {
+			display: inline-block;
+			padding: 0 15px;
+			@media (max-width: 455px) {
+				width: 100%;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.fa {
+		cursor: pointer;
+		display: none;
+		padding: 15px 0;
+		@media (max-width: 455px) {
+			display: block;
+		}
+	}
+	ul.showMe {
+		display: block;
+	}
+}
+body.scrolling {
+	.navBar {
+		position: fixed;
+		background: $white;
+		border-bottom: 1px dotted $black;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	}
+}
+
+//Header
+.header {
+	background: url(../images/header.jpg) center no-repeat fixed;
+	background-size: cover;
+	min-height: 400px;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.logo {
+		border: 2px solid $white;
+		width: 80%;
+		padding: 50px 10px;
+		animation-duration: 2.5s;
+	}
+}
+
+//Work Features
+.workContainer {
+	margin: 75px 0;
+	.screenshot, .info {
+		float: left;
+		width: 48.5%;
+		text-align: left;
+		@media (max-width: 940px) {
+			text-align: center;
+			width: 100%;
+		}
+	}
+	.screenshot {
+		margin-right: 3%;
+	}
+	.info {	
+		h4 {
+			@media (max-width: 940px) {
+				margin: 15px 0;
+			}
+		}
+		h5 {
+			border-bottom: 1px dotted $gray;
+			padding-bottom: 10px;
+			position: relative;
+		}
+		a.view {
+			position: absolute;
+			right: 10px;
+			border: none;
+			@media (max-width: 940px) {
+				position: inherit;
+				display: block;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+//Contact
+.contactInfo {
+	ul.social {
+		li {
+			margin: 0 20px;
+			display: inline-block;
+			@media (max-width: 755px) {
+				display: block;
+				margin-bottom: 20px;
+			}
+		}
+	}
+	a {
+		border: none;
+	}
+	.fa {
+		margin-right: 10px;
+	}
+}
+
+//Form Styles to implement later
+// .contactInfo, .contactForm {
+// 	// float: left;
+// 	text-align: left;
+// 	@media (max-width: 940px) {
+// 		text-align: center;
+// 	}
+// }
+// .contactInfo {
+//		width: 35%;
+//		margin-right: 5%;
+// }
+// .contactForm {
+// 	width: 60%;
+// 	input, textarea {
+// 		padding: 10px;
+// 		width: 100%;
+// 		margin-bottom: 10px;
+// 		background: #eee;
+// 		border: none;
+// 		border-left: 3px solid $teal;
+// 	}
+// 	textarea {
+// 		height: 150px;
+// 	}
+// 	input[type="submit"] {
+// 		background: $teal;
+// 		padding: 20px;
+// 		border: none;
+// 		border-bottom: 4px solid darken($teal, 50);
+// 		transition: all 0.25s ease-in-out;
+// 		&:hover {
+// 			background: darken($teal, 10)
+// 		}	
+// 	}
+// 	@media (max-width: 940px) {
+// 		width: 100%;
+// 		h4 {
+// 			margin-top: 15px;
+// 		}
+// 	}
+// }
+
+//Footer
+.footer {
+	background: $teal;
+	padding: 20px 0;
+	clear: both;
+}
+
+
+
+
