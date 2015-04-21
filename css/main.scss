@@ -122,14 +122,14 @@ ul {
 
 .columns {
 	column-count: 2;
-	column-gap: 60px;
+	column-gap: 40px;
 	column-rule: 1px dotted $gray;
 	text-align: left;
 	p:first-child {
 		margin-top: 0px;
 	}
 	h4 {
-		margin-top: 20px;
+		margin-top: 15px;
 		font-family: $headerFontFancy;
 	}
 	@media (max-width: 940px) {
