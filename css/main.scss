@@ -241,10 +241,11 @@ body.scrolling {
 			}
 		}
 		.techBox {
-			border: 1px solid $black;
+			border: 1px solid $teal;
 			display: inline-block;
 			padding: 10px;
 			margin: 10px 10px 10px 0;
+			border-radius: 2px;
 			p {
 				margin: 0;
 			}
