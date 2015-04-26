@@ -70,7 +70,7 @@ h2, h3, h5 {
 }
 
 h3 {
-	background: $white;
+	
 	font-size: 2em;
 }
 
@@ -111,6 +111,7 @@ ul {
 		padding: 0 10px;
 		margin: 0 auto;	
 		width: 30%;
+		background: $white;
 		@media (max-width: 755px) {
 			width: 50%;	
 		}
@@ -185,20 +186,36 @@ body.scrolling {
 
 //Header
 .header {
-	background: url(../images/header.jpg) center no-repeat fixed;
-	background-size: cover;
-	min-height: 400px;
-	height: 400px;
+	min-height: 550px;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-
+	position: relative;
+	background: rgba(0,0,0, 0.7);
+	margin: 0 auto;
+	padding: 20px 0;
 	.logo {
-		border: 2px solid $white;
+		border: 2px solid $teal;
 		width: 80%;
 		padding: 50px 10px;
 		animation-duration: 2.5s;
+		color: $white;
+		margin: auto;
+		h2 {
+			font-weight: 400;
+			letter-spacing: 2px;
+		}
 	}
+}
+
+.header:after {
+	content: '';
+	position: absolute;
+	background: url(../images/header.jpg) no-repeat center fixed;
+	background-size: cover;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
 }
 
 //Work Features
