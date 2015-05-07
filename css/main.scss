@@ -9,6 +9,17 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat|Playfair+Display+SC);
 @import url(http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css);
 
+@font-face {
+    font-family: 'steelheart';
+    src: url('../fonts/steelheart-webfont.eot');
+    src: url('../fonts/steelheart-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/steelheart-webfont.woff') format('woff'),
+         url('../fonts/steelheart-webfont') format('truetype'),
+         url('../fonts/steelheart-webfont.svg#steelheart') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $baseFont: 'Montserrat', sans-serif;
 $headerFont: 'Raleway', sans-serif;
 $headerFontFancy: 'Playfair Display SC', serif;
@@ -53,12 +64,19 @@ img {
 
 //Headings
 h1 {	
-	letter-spacing: 4px;
-	font-size: 3.5em;
-	margin: 0 20px;
+	// letter-spacing: 4px;
+	font-size: 15em;
+	margin: 10px 0;
+	line-height: 0.75em;
+	font-family: 'steelheart';
+	font-weight: 400;
+	text-shadow: 1px 1px 2px #222;
+	@media (max-width: 455px) {
+		font-size: 10em;
+	}
 }
 
-h1, h3 {
+h3 {
 	font-family: $headerFontFancy;
 }
 h2, h4 {
@@ -189,7 +207,7 @@ body.scrolling {
 	min-height: 550px;
 	display: flex;
 	position: relative;
-	background: rgba(0,0,0, 0.7);
+	background: rgba(0,0,0, 0.1);
 	margin: 0 auto;
 	padding: 20px 0;
 	.logo {
@@ -202,6 +220,7 @@ body.scrolling {
 		h2 {
 			font-weight: 400;
 			letter-spacing: 2px;
+			text-shadow: 1px 1px 2px #222;
 		}
 	}
 }
@@ -209,7 +228,7 @@ body.scrolling {
 .header:after {
 	content: '';
 	position: absolute;
-	background: url(../images/header.jpg) no-repeat center fixed;
+	background: url(../images/andromeda.jpg) no-repeat center fixed;
 	background-size: cover;
 	top: 0;
 	left: 0;
@@ -267,6 +286,9 @@ body.scrolling {
 				margin: 0;
 			}
 		}
+	}
+	.galleryItem {
+		border: 1px solid $teal;
 	}
 }
 
