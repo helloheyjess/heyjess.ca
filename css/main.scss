@@ -288,20 +288,31 @@ body.scrolling {
 		}
 	}
 	.galleryItem {
-		border: 1px solid $teal;
+		float: left;
+		margin: 4.16%;
+		width: 25%;
+		@media (max-width: 940px) {
+			width: 100%;
+			margin: 20px auto;
+		}
+		img {
+			margin-bottom: 20px;
+		}
 	}
 }
 
+
 //Contact
 .contactInfo {
+	width: 35%;
+	margin-right: 5%;
+	@media (max-width: 755px) {
+		width: 100%;
+	}
 	ul.social {
 		li {
-			margin: 0 20px;
-			display: inline-block;
-			@media (max-width: 755px) {
-				display: block;
-				margin-bottom: 20px;
-			}
+			margin: 20px;
+			
 		}
 	}
 	a {
@@ -312,48 +323,44 @@ body.scrolling {
 	}
 }
 
-//Form Styles to implement later
-// .contactInfo, .contactForm {
-// 	// float: left;
-// 	text-align: left;
-// 	@media (max-width: 940px) {
-// 		text-align: center;
-// 	}
-// }
-// .contactInfo {
-//		width: 35%;
-//		margin-right: 5%;
-// }
-// .contactForm {
-// 	width: 60%;
-// 	input, textarea {
-// 		padding: 10px;
-// 		width: 100%;
-// 		margin-bottom: 10px;
-// 		background: #eee;
-// 		border: none;
-// 		border-left: 3px solid $teal;
-// 	}
-// 	textarea {
-// 		height: 150px;
-// 	}
-// 	input[type="submit"] {
-// 		background: $teal;
-// 		padding: 20px;
-// 		border: none;
-// 		border-bottom: 4px solid darken($teal, 50);
-// 		transition: all 0.25s ease-in-out;
-// 		&:hover {
-// 			background: darken($teal, 10)
-// 		}	
-// 	}
-// 	@media (max-width: 940px) {
-// 		width: 100%;
-// 		h4 {
-// 			margin-top: 15px;
-// 		}
-// 	}
-// }
+.contactInfo, .contactForm {
+	float: left;
+	text-align: left;
+	@media (max-width: 1024px) {
+		text-align: center;
+	}
+}
+
+.contactForm {
+	width: 60%;
+	input, textarea {
+		padding: 10px;
+		width: 100%;
+		margin-bottom: 10px;
+		background: #eee;
+		border: none;
+		border-left: 3px solid $teal;
+	}
+	textarea {
+		height: 150px;
+	}
+	input[type="submit"] {
+		background: $teal;
+		padding: 20px;
+		border: none;
+		border-bottom: 4px solid darken($teal, 50);
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			background: darken($teal, 10)
+		}	
+	}
+	@media (max-width: 940px) {
+		width: 100%;
+		h4 {
+			margin-top: 15px;
+		}
+	}
+}
 
 //Footer
 .footer {
